@@ -7,3 +7,4 @@ import * as footerModal from './scripts/footer-modal';
 import * as switchBtn from './scripts/switchBtn';
 import * as modal from './scripts/modal';
 import * as scroll from './scripts/scrollButton';
+import * as localStorage from './scripts/localStorage';
