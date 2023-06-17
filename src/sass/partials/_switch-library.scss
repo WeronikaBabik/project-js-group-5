@@ -12,10 +12,12 @@
   background-color: $footerText;
   border-radius: 100%;
   content: '';
-  // display: block;
+  display: block;
   height: 19px;
+  margin: 16px 25px;
   position: relative;
-  right: 25%;
+  top: -16px;
+  right: 90%;
   transition: background-color 0.3s, transform 0.3s;
   width: 19px;
 }

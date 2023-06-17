@@ -5,8 +5,10 @@
   cursor: pointer;
   height: 27px;
   outline-width: 5px;
+  position: absolute;
   width: 47px;
-  margin: 40px 20px;
+  top: 35px;
+  right: 60%;
   @include tablet {
     left: 65%;
     top: 40px;
@@ -32,7 +34,6 @@
 }
 .dark {
   background-color: $numbColor;
-  color: $textColor;
 }
 .dark .icon {
   background: $switchColor;
@@ -52,7 +53,6 @@
 /* LIGHT MODE */
 .light {
   background-color: $textColor;
-  color: $numbColor;
 }
 
 .light .icon {

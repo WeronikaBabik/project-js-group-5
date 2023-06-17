@@ -1,0 +1,68 @@
+.hystmodal {
+}
+
+.modal {
+  top: 8px;
+  right: 8px;
+  width: 280px;
+}
+
+.img {
+  width: 240px;
+  height: 357px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include tablet {
+    float: left;
+    height: 400px;
+  }
+}
+
+.info-text {
+  display: flex;
+  justify-content: start;
+  padding-left: 16px;
+}
+.info-movie {
+  display: flex;
+  justify-self: center;
+  padding-left: 16px;
+  margin-bottom: 20px;
+}
+.info-name {
+  color: $textAbout;
+  gap: 8px;
+}
+.value-orange {
+  background-color: $modalBacground;
+}
+.about-title {
+  display: flex;
+
+  text-transform: uppercase;
+  padding-left: 16px;
+}
+.about-text {
+  padding-left: 16px;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.button {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+  @include tablet {
+  }
+}
+.button-item {
+  border-radius: 5px;
+  height: 136px;
+  height: 44px;
+}
+@include desktop {
+}
