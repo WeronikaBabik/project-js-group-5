@@ -5,15 +5,8 @@
   cursor: pointer;
   height: 27px;
   outline-width: 5px;
-<<<<<<< HEAD
   width: 47px;
   margin: 40px 20px;
-=======
-  position: absolute;
-  width: 47px;
-  top: 35px;
-  right: 60%;
->>>>>>> main
   @include tablet {
     left: 65%;
     top: 40px;
@@ -39,10 +32,7 @@
 }
 .dark {
   background-color: $numbColor;
-<<<<<<< HEAD
   color: $textColor;
-=======
->>>>>>> main
 }
 .dark .icon {
   background: $switchColor;
@@ -62,10 +52,7 @@
 /* LIGHT MODE */
 .light {
   background-color: $textColor;
-<<<<<<< HEAD
   color: $numbColor;
-=======
->>>>>>> main
 }
 
 .light .icon {

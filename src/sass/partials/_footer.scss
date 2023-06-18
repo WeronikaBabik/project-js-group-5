@@ -30,26 +30,19 @@
       line-height: 1.4em;
     }
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
+  
   &__icon {
     margin: 0 10px;
     color: $heart;
     transition-property: color;
     transition-duration: 750ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-<<<<<<< HEAD
 
-=======
->>>>>>> main
     &:hover,
     &:focus {
       color: $hover-heart;
     }
   }
-<<<<<<< HEAD
 
   &__link {
     color: $footerText;
@@ -59,13 +52,6 @@
 
 .footer-modal {
   max-width: 100%;
-=======
-  &__link {
-    color: $footerText;
-  }
-}
-.footer-modal {
->>>>>>> main
   display: none;
   position: fixed;
   width: 100%;
@@ -76,7 +62,6 @@
   background-color: rgba(0, 0, 0, 0.4);
 
   &__window {
-<<<<<<< HEAD
     position: absolute;
     padding: 40px;
     top: 50%;
@@ -86,13 +71,6 @@
     width: 60%;
     border: 1px solid $textColor;
     border-radius: 5px;
-=======
-    margin: auto;
-    height: 90%;
-    width: 90%;
-    border: 1px solid $textColor;
-    padding: 16px;
->>>>>>> main
     background-color: $textColor;
     background-image: url(../images/footer/gr5logo.svg);
     background-repeat: no-repeat;
