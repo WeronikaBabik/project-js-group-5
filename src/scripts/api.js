@@ -23,9 +23,31 @@ export async function getAllMovies() {
     .then(response => console.log(response))
     .catch(err => console.error(err));
 }
+<<<<<<< Updated upstream
 export async function getInfoAboutMovie(movieId, query) {
   fetch('https://api.themoviedb.org/3/movie/movie_id', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
+=======
+export async function getInfoAboutMovie(movieId) {
+  const response = await fetch(
+    `${API_URL}/movie?api_key=${API_KEY}&movie_id=${movieId}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: movie } = await response.json();
+  return movie;
+}
+export async function getMovieTrailer(movieId) {
+  const response = await fetch(
+    `${API_URL}/movie/${movieId}/videos?api_key=${API_KEY}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: trailer } = await response.json();
+  return trailer;
+>>>>>>> Stashed changes
 }

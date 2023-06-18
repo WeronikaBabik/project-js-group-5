@@ -13,10 +13,26 @@
     <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
+<<<<<<< Updated upstream
     <!-- W taki sposbu dodajemy fragmenty w główny HTML-plik strony. -->
     <include src="./partials/example.html"></include>
     <span class="loader"></span>
     <!-- Skrypt jest na samym dole kodu. On juz ma w sobie podłączony SAAS plik. -->
+=======
+    <header>
+      <include src="./partials/header-main.html"></include>
+    </header>
+    <main>
+      <include src="./partials/loader.html"></include>
+      <include src="./partials/main-body.html"></include>
+      <include src="./partials/modal.html"></include>
+      <include src="./partials/pagination.html"></include>
+    </main>
+    <footer><include src="./partials/footer.html"></include></footer>
+    <a href="#" class="scroll"
+      ><img src="images/arrow.svg" alt="arrow image"
+    /></a>
+>>>>>>> Stashed changes
     <script src="./index.js" type="module"></script>
   </body>
 </html>
