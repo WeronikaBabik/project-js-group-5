@@ -1,5 +1,4 @@
 import { getInfoAboutMovie } from "./api";
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const buttonWatched = document.querySelector('.button_watched');
 const buttonQueue= document.querySelector('.button_queue')
 // buttonWatched.addEventListener('click', addToWatched);
