@@ -21,17 +21,22 @@ export async function showPopUp(card) {
   const movieId = card.getAttribute('data-movie');
   const movie = await getInfoAboutMovie(movieId);
   const movieTrailer = await getMovieTrailer(movieId);
+  console.log(movieTrailer);
   const poster = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : noimage;
   modal.innerHTML = `<span class="modal__closeBtn" type="button">x</span>
+  <button class="button_trailer" type="button" id="button_trailer"
+  ></button>
   <div class="modal__info">
     <div class="container_imag">
+    
       <img
         class="img"
         src="${poster}"
         alt="${movie.title}"
       />
+  
       <div class="info_text">
         <h1 class="info_title">${movie.title}</h1>
         <div class="info_movie">
@@ -55,22 +60,52 @@ export async function showPopUp(card) {
           <p class="about_text">
             ${movie.overview}
           </p>
-          <div class="trailer"><iframe width="500" height="300" src="https://www.youtube.com/embed/${movieTrailer}" title="Youtube"></iframe></div>
-          <ul class="button">
+          
+          
             <li class="button_item">
               <button class="button_watched" type="button">
                 ADD TO WATCHED
               </button>
             </li>
             <li class="button_item">
-              <button class="button_queue" type="button">ADD TO QUEUE</button>
+              <button class="button_queue" type="button"
+              onclick="trailerModal()">ADD TO QUEUE</button>
             </li>
           </ul>
         </div>
       </div>
     </div>
-  </div>`;
+  </div>
+  <div class="trailer__modal trailerHiden ">Trailer<div class="trailer">
+  <iframe class="iframe" id="iframe" frameborder="0" border="0" cellspacing="0" allowfullscreen src="" title="Youtube">
+  </iframe>
+  <button class="button_trailer-close">X</button></div></div>
+  `;
   const modalCloseBtn = document.querySelector('.modal__closeBtn');
+  const traileModal = document.querySelector('.trailer__modal');
+  const buttonTrailerClose = document.querySelector('.button_trailer-close');
+  const buttonTrailer = document.querySelector('.button_trailer');
+  let video = document.querySelector('.iframe');
+  const trailer = document.querySelector('.trailer');
+
+  buttonTrailer.addEventListener('click', () => {
+    traileModal.classList.remove('trailerHiden');
+    // modal.classList.remove('modal')
+    modal.classList.add('overflow');
+    video.src = `https://www.youtube.com/embed/${movieTrailer}`;
+  });
+
+  trailer.addEventListener('click', () => {
+    traileModal.classList.add('trailerHiden');
+    modal.classList.remove('overflow');
+    video.src = '';
+  });
+
+  buttonTrailerClose.addEventListener('click', () => {
+    traileModal.classList.add('trailerHiden');
+    modal.classList.remove('overflow');
+    video.src = '';
+  });
   modalCloseBtn.addEventListener('click', () =>
     modalCard.classList.remove('show-popup')
   );
@@ -107,10 +142,4 @@ async function showResultsOnSearch(e) {
     .join('');
   const cards = document.querySelectorAll('.card');
   addEventToCard(cards);
-}
-
-async function showTrailer(id) {
-  e.preventDefault();
-  const query = input.value;
-  const data = await getMovieTrailer(query);
 }
