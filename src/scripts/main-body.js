@@ -21,7 +21,7 @@ export async function showPopUp(card) {
   const movieId = card.getAttribute('data-movie');
   const movie = await getInfoAboutMovie(movieId);
   const movieTrailer = await getMovieTrailer(movieId);
-  console.log(movieTrailer);
+
   const poster = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : noimage;
@@ -90,7 +90,6 @@ export async function showPopUp(card) {
 
   buttonTrailer.addEventListener('click', () => {
     traileModal.classList.remove('trailerHiden');
-    // modal.classList.remove('modal')
     modal.classList.add('overflow');
     video.src = `https://www.youtube.com/embed/${movieTrailer}`;
   });
