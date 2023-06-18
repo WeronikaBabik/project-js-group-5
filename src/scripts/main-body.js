@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { getMovieTrailer, getTrending } from './api';
 import { getGenre } from './genres';
+=======
+import { getTrending } from './api';
+>>>>>>> main
 
 export const mainGallery = document.querySelector('.gallery');
 
@@ -7,6 +11,7 @@ getTrending().then(data => {
   mainGallery.insertAdjacentHTML('beforeend', showGallery(data));
 });
 export function showGallery(movies) {
+<<<<<<< HEAD
   return movies
     .map(movie => {
       //let movieId = movie.id;
@@ -41,5 +46,24 @@ export function showGallery(movies) {
     </div>
   </li>`;
     })
+=======
+  const genres = Object.values(movies[0].genre_ids).join(',');
+  const date = Object.values(movies[0].release_date).slice(0, 4).join('');
+  return movies
+    .map(
+      movie =>
+        `<li class="movie">
+    <div class="movie__info">        
+        <img class="movie__image"
+        src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
+        alt="movie-title"
+        loading="lazy"
+        />
+      <p class="movie__name">${movie.title}</p>
+      <p class="movie__description">${genres} | ${date}</p>
+    </div>
+  </li>`
+    )
+>>>>>>> main
     .join('');
 }

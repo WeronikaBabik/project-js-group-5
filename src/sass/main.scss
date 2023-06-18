@@ -1,7 +1,8 @@
-@import './common';
-@import './example';
+@import '~node_modules/modern-normalize/modern-normalize.css';
+@import './utils/_common';
 @import './utils/_mixins';
 @import './utils/_variables';
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 @import './partials/_loader';
 =======
@@ -17,3 +18,14 @@
 @import './partials/_scrollBtn';
 @import './partials/_pagination';
 >>>>>>> Stashed changes
+=======
+@import './partials/footer';
+@import './partials/header-main';
+@import './partials/header-mylibrary';
+@import './partials/_footer';
+@import './partials/_header-main';
+@import './partials/_main-body';
+@import './partials/switchBtn';
+@import './partials/switch-library';
+@import './partials/library-icon';
+>>>>>>> main

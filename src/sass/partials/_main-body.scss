@@ -41,9 +41,15 @@
     z-index: 0;
     cursor: pointer;
   }
+<<<<<<< HEAD
   &__info:hover img {
     transform: perspective(400px) scale(102%);
     box-shadow: -30px -13px 29px 0px $headerBackground;
+=======
+  &__info img:hover {
+    transform: perspective(400px) scale(110%);
+    box-shadow: 18px 24px 24px 0px $headerBackground;
+>>>>>>> main
     z-index: 1;
   }
   &__info {
@@ -51,14 +57,18 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1.17;
+<<<<<<< HEAD
     @include desktop {
       font-size: 20px;
     }
+=======
+>>>>>>> main
   }
   &__name {
     text-transform: uppercase;
     padding-top: 10px;
     margin: 0;
+<<<<<<< HEAD
     max-width: 280px;
     @include tablet {
       max-width: 336px;
@@ -66,6 +76,8 @@
     @include desktop {
       max-width: 395px;
     }
+=======
+>>>>>>> main
   }
   &__description {
     padding-top: 10px;
@@ -73,6 +85,7 @@
     color: $numbBackground;
   }
 }
+<<<<<<< HEAD
 .tracking:hover p {
   animation: tracking 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
@@ -88,3 +101,5 @@
     opacity: 1;
   }
 }
+=======
+>>>>>>> main

@@ -9,6 +9,7 @@
 }
 
 .icon-library {
+<<<<<<< HEAD
   background-color: $footerText;
   border-radius: 100%;
   content: '';
@@ -16,6 +17,17 @@
   height: 19px;
   position: relative;
   right: 25%;
+=======
+  background-color:$footerText;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  height: 19px;
+  margin: 16px 25px;
+  position: relative;
+  top: -16px;
+  right: 90%;
+>>>>>>> main
   transition: background-color 0.3s, transform 0.3s;
   width: 19px;
 }
