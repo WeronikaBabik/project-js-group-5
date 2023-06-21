@@ -7,11 +7,9 @@ let perPage = 20;
 showGallery();
 export async function showGallery(page) {
   const data = await getTrending(page);
-  //if()
-  //total.results
-  //total_pages;
+  console.log(data);
   mainGallery.innerHTML = data.results
-    .slice(0, 12)
+    .slice(0, 9)
     .map(e => {
       let date = '';
       if (e.release_date) {

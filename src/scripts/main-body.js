@@ -187,6 +187,7 @@ export async function showResultsOnSearch(e, currentPage) {
     return Notiflix.Notify.failure('Oops, there is no movie with that name');
   }
   mainGallery.innerHTML = data.results
+    .slice(0, 9)
     .map(movie => {
       let date = '';
       if (movie.release_date) {
