@@ -18,6 +18,7 @@ export function addEventToCard(cards) {
     card.addEventListener('click', () => showPopUp(card));
   });
 }
+
 export async function showPopUp(card) {
   modalCard.classList.add('show-popup');
   const movieId = card.getAttribute('data-movie');
@@ -85,6 +86,12 @@ export async function showPopUp(card) {
   let video = document.querySelector('.iframe');
   const trailer = document.querySelector('.trailer');
   const modalInfo = document.querySelector('.modal__info');
+  const modalMain = document.querySelector('.modal');
+  console.log(modalMain);
+
+  document.addEventListener('keydown', event => {
+    modalCard.classList.remove('show-popup');
+  });
 
   buttonTrailer.addEventListener('click', () => {
     traileModal.classList.remove('trailerHiden');
@@ -107,6 +114,7 @@ export async function showPopUp(card) {
     modal.classList.remove('overflow');
     video.src = '';
   });
+
   modalCloseBtn.addEventListener('click', () =>
     modalCard.classList.remove('show-popup')
   );
