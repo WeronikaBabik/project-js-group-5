@@ -3,6 +3,7 @@ import noimage from '../images/header-main/noimage.jpg';
 export function markup(data) {
   data
     .map(movie => {
+      console.log(movie);
       let date = '';
       if (movie.release_date) {
         date = movie.release_date;

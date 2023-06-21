@@ -10,9 +10,7 @@ const modalCard = document.querySelector('.modal');
 const movie = document.querySelector('.movie');
 const searchForm = document.querySelector('.search-form');
 const modal = document.querySelector('.modal');
-
-// searchForm.addEventListener('submit', showResultsOnSearch);
-
+console.log(mainGallery);
 export function addEventToCard(cards) {
   cards.forEach(card => {
     card.addEventListener('click', () => showPopUp(card));
@@ -137,3 +135,4 @@ async function showResultsOnSearch(e) {
   const cards = document.querySelectorAll('.card');
   addEventToCard(cards);
 }
+searchForm.addEventListener('submit', showResultsOnSearch);

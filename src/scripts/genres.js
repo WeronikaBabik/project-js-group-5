@@ -2,6 +2,7 @@ import { genres } from './genres-list';
 
 export function getGenre(genreId) {
   const arr = [];
+  console.log(arr);
   for (const value of genres) {
     if (genreId.includes(value.id)) {
       arr.push(value.name);
