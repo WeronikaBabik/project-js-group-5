@@ -1,9 +1,10 @@
-import { getBySearch, getTrending } from './api';
+import { getBySearch } from './api';
 import { showGallery } from './get-trending';
 import { mainGallery } from './main-body';
 import { refs } from './pagination-refs';
 import Notiflix from 'notiflix';
 import { input } from './main-body';
+import { showResultsOnSearch } from './main-body';
 
 refs.paginationRef.addEventListener('click', onPaginationClick);
 
@@ -150,7 +151,6 @@ function onPaginationBtn(currentPage) {
 
 function onPaginationBtnForInput(currentPage) {
   mainGallery.innerHTML = '';
-  getBySearch(input.value, currentPage).catch(error => {
-    return Notiflix.Notify.failure('Oops, there is no movie with that name');
-  });
+  showResultsOnSearch(e, currentPage);
+  console.log(currentPage);
 }

@@ -3,10 +3,13 @@ import { mainGallery } from './main-body';
 import { getGenre } from './genres';
 import { addEventToCard } from './main-body';
 import noimage from '../images/header-main/noimage.jpg';
-
+let perPage = 20;
 showGallery();
 export async function showGallery(page) {
   const data = await getTrending(page);
+  //if()
+  //total.results
+  //total_pages;
   mainGallery.innerHTML = data.results
     .slice(0, 12)
     .map(e => {

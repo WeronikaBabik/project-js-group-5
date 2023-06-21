@@ -178,10 +178,10 @@ export async function showPopUp(card) {
   }
 }
 
-async function showResultsOnSearch(e) {
+export async function showResultsOnSearch(e, currentPage) {
   e.preventDefault();
   const query = input.value;
-  const data = await getBySearch(query, (page = 1));
+  const data = await getBySearch(query, currentPage);
   if (data.results.length === 0) {
     showGallery();
     return Notiflix.Notify.failure('Oops, there is no movie with that name');
