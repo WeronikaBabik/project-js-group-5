@@ -143,6 +143,7 @@ export async function showPopUp(card) {
       localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
       buttonWatched.innerHTML = 'ADD TO WATCHED';
       buttonWatched.style.backgroundColor = '#fff';
+      Notiflix.Notify.failure('Movie has been removed from gallery"Watched"');
     } else {
       // Film nie jest zapisany w zakładce Watched, dodaj go
       watchedMovies.push(movieId);
@@ -176,6 +177,7 @@ export async function showPopUp(card) {
       localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
       buttonQueue.innerHTML = 'ADD TO QUEUE';
       buttonQueue.style.backgroundColor = '#fff';
+      Notiflix.Notify.failure('Movie has been removed from gallery"Queue"');
     } else {
       // Film nie jest zapisany w zakładce Queue, dodaj go
       queueMovies.push(movieId);
