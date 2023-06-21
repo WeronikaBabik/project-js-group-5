@@ -39,7 +39,7 @@ function onPaginationClick(event) {
       event.target.classList.add('pagination-select');
     }
 
-    if (event.target.classList.contains('arrow-right') && currentPage < 1000) {
+    if (event.target.classList.contains('arrow-right') && currentPage < 90) {
       btns.forEach(el => el.classList.remove('pagination-select'));
       refs.btn1Ref.classList.add('pagination-select');
       refs.btn1Ref.textContent = Number(refs.btn1Ref.textContent) + 5;
@@ -90,7 +90,7 @@ function onPaginationClick(event) {
     } else {
       leftArrowBuild(true);
     }
-    if (Number(currentPage) < 996) {
+    if (Number(currentPage) < 86) {
       rightArrowBuild(false);
     }
     window.scrollTo({

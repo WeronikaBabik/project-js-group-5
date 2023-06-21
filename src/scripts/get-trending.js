@@ -3,11 +3,11 @@ import { mainGallery } from './main-body';
 import { getGenre } from './genres';
 import { addEventToCard } from './main-body';
 import noimage from '../images/header-main/noimage.jpg';
+import Notiflix from 'notiflix';
 let perPage = 20;
 showGallery();
 export async function showGallery(page) {
   const data = await getTrending(page);
-  console.log(data);
   mainGallery.innerHTML = data.results
     .slice(0, 9)
     .map(e => {
