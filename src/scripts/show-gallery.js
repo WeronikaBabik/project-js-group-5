@@ -19,15 +19,17 @@ queueButton.addEventListener('click', () => {
 // Wejście na stronę wyświetla automatycznie watchedMovies
 window.addEventListener('DOMContentLoaded', () => {
   displayMoviesFromLocalStorage('watchedMovies');
+  refs.paginationRef.classList.add('is-hidden');
 });
 
 async function displayMoviesFromLocalStorage(key) {
+  refs.paginationRef.classList.add('is-hidden');
   const movies = [];
   const data = await getDataFromLS(key);
   //Sprawdzanie czy localstorage jest pusty, jeśli nie jest to galleryIcon znika
   if (data && data.length > 0) {
     galleryIcon.innerHTML = '';
-    refs.paginationRef.classList.remove('is-hidden');
+    refs.paginationRef.classList.add('is-hidden');
     if (data && data.length > 0) {
       clearGallery();
 
