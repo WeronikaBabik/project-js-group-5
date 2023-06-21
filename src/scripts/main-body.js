@@ -86,7 +86,6 @@ export async function showPopUp(card) {
   const trailer = document.querySelector('.trailer');
   const modalInfo = document.querySelector('.modal__info');
   const modalMain = document.querySelector('.modal');
-  console.log(modalMain);
 
   document.addEventListener('keydown', event => {
     if (event.keyCode === 27) {
