@@ -17,6 +17,7 @@ export function addEventToCard(cards) {
     card.addEventListener('click', () => showPopUp(card));
   });
 }
+
 export async function showPopUp(card) {
   modalCard.classList.add('show-popup');
   const movieId = card.getAttribute('data-movie');
@@ -84,13 +85,19 @@ export async function showPopUp(card) {
   let video = document.querySelector('.iframe');
   const trailer = document.querySelector('.trailer');
   const modalInfo = document.querySelector('.modal__info');
+  const modalMain = document.querySelector('.modal');
+
+  document.addEventListener('keydown', event => {
+    if (event.keyCode === 27) {
+      modalCard.classList.remove('show-popup');
+    }
+  });
 
   buttonTrailer.addEventListener('click', () => {
     traileModal.classList.remove('trailerHiden');
     // modal.classList.remove('modal')
     modalInfo.classList.add('hidden');
     modal.classList.add('overflow');
-
     video.src = `https://www.youtube.com/embed/${movieTrailer}`;
   });
 
@@ -106,6 +113,7 @@ export async function showPopUp(card) {
     modal.classList.remove('overflow');
     video.src = '';
   });
+
   modalCloseBtn.addEventListener('click', () =>
     modalCard.classList.remove('show-popup')
   );
