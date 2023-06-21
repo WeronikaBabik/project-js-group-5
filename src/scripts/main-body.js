@@ -141,6 +141,7 @@ export async function showPopUp(card) {
       localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
       buttonWatched.innerHTML = 'DELETE FROM WATCHED';
       buttonWatched.style.backgroundColor = '#ff6b01';
+      Notiflix.Notify.success('Movie has been added to gallery"Watched"');
     }
   }
 
@@ -173,6 +174,7 @@ export async function showPopUp(card) {
       localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
       buttonQueue.innerHTML = 'DELETE FROM QUEUE';
       buttonQueue.style.backgroundColor = '#ff6b01';
+      Notiflix.Notify.success('Movie has been added to gallery"Queue"');
     }
   }
 }
