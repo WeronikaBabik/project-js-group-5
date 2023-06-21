@@ -1,12 +1,16 @@
 import { getInfoAboutMovie } from './api';
 import { getGenre } from './genres';
 import { refs } from './pagination-refs';
+import { markupModal } from './markup-modal';
+import { showPopUp } from './main-body';
+const API_KEY = `d793dd4ca6e7be6c8e5a071661ccb72e`;
+const API_URL = `https://api.themoviedb.org/3`;
 
 const galleryIcon = document.querySelector('.movie-icon');
 const galleryLibrary = document.querySelector('.gallery-library');
 const watchedButton = document.querySelector('#watchedButton');
 const queueButton = document.querySelector('#queueButton');
-
+const modalCard = document.querySelector('.modal');
 refs.paginationRef.classList.add('is-hidden');
 // Kliknięcie przycisku watched wyświetla watchedMovies
 watchedButton.addEventListener('click', () => {
@@ -75,4 +79,35 @@ function showMovies(data) {
     <p class="movie__name">${data.title}</p>
     <p class="movie__description">${getGenre(genres)} | ${date.slice(0, 4)}</p>
   </li>`;
+
+  const trackingID = document.querySelectorAll('.tracking');
+  addEventToCard(trackingID);
+}
+function addEventToCard(cards) {
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // showPopUp(card);
+
+      // markupModal(data),
+      let text = card.getAttribute('data-movie');
+      console.log(text);
+      let singleMovie = getInfoAboutMoviel(text);
+      console.log(singleMovie);
+      showPopUp(card);
+    });
+  });
+}
+
+async function getInfoAboutMoviel(movieId) {
+  const response = await fetch(
+    `${API_URL}/movie/${movieId}?api_key=${API_KEY}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+    if (movieId === 'undefined') {
+      reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+    }
+  }
+  const movie = await response.json();
+  return movie;
 }

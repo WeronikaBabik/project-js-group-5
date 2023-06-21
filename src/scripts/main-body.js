@@ -11,7 +11,7 @@ const movie = document.querySelector('.movie');
 const searchForm = document.querySelector('.search-form');
 const modal = document.querySelector('.modal');
 
-searchForm.addEventListener('submit', showResultsOnSearch);
+// searchForm.addEventListener('submit', showResultsOnSearch);
 
 export function addEventToCard(cards) {
   cards.forEach(card => {
@@ -19,9 +19,9 @@ export function addEventToCard(cards) {
   });
 }
 export async function showPopUp(card) {
+  console.log(card);
   modalCard.classList.add('show-popup');
   const movieId = card.getAttribute('data-movie');
-
   const movie = await getInfoAboutMovie(movieId);
   const movieTrailer = await getMovieTrailer(movieId);
   modal.innerHTML = markupModal(movie);
