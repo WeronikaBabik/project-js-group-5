@@ -7,7 +7,7 @@ import noimage from '../images/header-main/noimage.jpg';
 showGallery();
 export async function showGallery() {
   const data = await getTrending();
-  mainGallery.innerHTML = data
+  mainGallery.innerHTML = data.results
     .slice(0, 12)
     .map(e => {
       let date = '';

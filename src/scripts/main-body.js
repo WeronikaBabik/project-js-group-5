@@ -181,12 +181,13 @@ export async function showPopUp(card) {
 async function showResultsOnSearch(e) {
   e.preventDefault();
   const query = input.value;
-  const data = await getBySearch(query);
-  if (data.length === 0) {
+  const data = await getBySearch(query, (page = 1));
+  console.log(data);
+  if (data.results.length === 0) {
     showGallery();
     return Notiflix.Notify.failure('Oops, there is no movie with that name');
   }
-  mainGallery.innerHTML = data
+  mainGallery.innerHTML = data.results
     .map(movie => {
       let date = '';
       if (movie.release_date) {
