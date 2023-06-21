@@ -64,7 +64,7 @@ function showMovies(data) {
   }
   const poster = data.poster_path
     ? `https://image.tmdb.org/t/p/w500/${data.poster_path}`
-    : noimage;
+    : `https://upload.wikimedia.org/wikipedia/commons/f/f7/No_Image_%282879926%29_-_The_Noun_Project.svg`;
   const genres = data.genres.map(genre => genre.id);
   galleryLibrary.innerHTML += `<li class="card tracking" data-movie="${
     data.id

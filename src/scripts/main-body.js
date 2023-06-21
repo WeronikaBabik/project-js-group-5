@@ -2,7 +2,6 @@ import { getMovieTrailer, getBySearch, getInfoAboutMovie } from './api';
 import { showGallery } from './get-trending';
 import Notiflix from 'notiflix';
 import { getGenre } from './genres';
-import noimage from '../images/header-main/noimage.jpg';
 
 export const mainGallery = document.querySelector('.gallery');
 export const input = document.querySelector('.search-input');
@@ -27,7 +26,7 @@ export async function showPopUp(card) {
   const genres = movie.genres.map(genre => genre.id);
   const poster = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-    : noimage;
+    : `https://upload.wikimedia.org/wikipedia/commons/4/44/Image_tagging_icon_02.svg`;
   modal.innerHTML = `
   <div class="modal__info">
   <span class="modal__closeBtn" type="button">x</span>
@@ -200,7 +199,7 @@ export async function showResultsOnSearch(e, currentPage) {
       const genre = getGenre(movie.genre_ids);
       const poster = movie.poster_path
         ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-        : noimage;
+        : `https://upload.wikimedia.org/wikipedia/commons/4/44/Image_tagging_icon_02.svg`;
       return `
     <li class="card tracking" data-movie="${movie.id}">
       <div class="movie__info">        
