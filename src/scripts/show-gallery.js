@@ -86,9 +86,7 @@ function addEventToCardLibrary(cards) {
   cards.forEach(card => {
     card.addEventListener('click', () => {
       let text = card.getAttribute('data-movie');
-      console.log(text);
       let singleMovie = getInfoAboutMovielibrary(text);
-      console.log(singleMovie);
       showPopUp(card);
     });
   });
