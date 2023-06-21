@@ -1,8 +1,9 @@
-import { getBySearch } from './api';
+import { getBySearch, getTrending } from './api';
 import { showGallery } from './get-trending';
 import { mainGallery } from './main-body';
 import { refs } from './pagination-refs';
 import Notiflix from 'notiflix';
+import { input } from './main-body';
 
 refs.paginationRef.addEventListener('click', onPaginationClick);
 
@@ -126,6 +127,16 @@ export function onCurrentPage(event) {
       } else if (event.target.classList.contains('arrow-left')) {
         currentPage = +refs.btn5Ref.textContent;
         onPaginationBtn(currentPage);
+      } else {
+        if (currentPage > 0) {
+          onPaginationBtnForInput(currentPage);
+        } else if (event.target.classList.contains('arrow-right')) {
+          currentPage = +refs.btn1Ref.textContent;
+          onPaginationBtnForInput(currentPage);
+        } else if (event.target.classList.contains('arrow-left')) {
+          currentPage = +refs.btn5Ref.textContent;
+          onPaginationBtnForInput(currentPage);
+        }
       }
     }
   }
@@ -134,8 +145,7 @@ export function onCurrentPage(event) {
 
 function onPaginationBtn(currentPage) {
   mainGallery.innerHTML = '';
-  fetchTrendingMovies(currentPage)
-    .then(getGenre())
+  getTrending(currentPage)
     .then(showGallery)
     .catch(error => {
       return Notiflix.Notify.failure('Oops, there is no movie with that name');
@@ -147,31 +157,4 @@ function onPaginationBtnForInput(currentPage) {
   getBySearch(input.value, currentPage).catch(error => {
     return Notiflix.Notify.failure('Oops, there is no movie with that name');
   });
-}
-
-function onCurrentPage(event) {
-  if (event.target.classList.contains('pagination-button')) {
-    let currentPage = Number(event.target.textContent);
-    if (input.value === '') {
-      if (currentPage > 0) {
-        onPaginationBtn(currentPage);
-      } else if (event.target.classList.contains('arrow-right')) {
-        currentPage = +refs.btn1Ref.textContent;
-        onPaginationBtn(currentPage);
-      } else if (event.target.classList.contains('arrow-left')) {
-        currentPage = +refs.btn5Ref.textContent;
-        onPaginationBtn(currentPage);
-      }
-    } else {
-      if (currentPage > 0) {
-        onPaginationBtnForInput(currentPage);
-      } else if (event.target.classList.contains('arrow-right')) {
-        currentPage = +refs.btn1Ref.textContent;
-        onPaginationBtnForInput(currentPage);
-      } else if (event.target.classList.contains('arrow-left')) {
-        currentPage = +refs.btn5Ref.textContent;
-        onPaginationBtnForInput(currentPage);
-      }
-    }
-  }
 }
