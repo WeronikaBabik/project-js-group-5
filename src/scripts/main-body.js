@@ -90,7 +90,9 @@ export async function showPopUp(card) {
   console.log(modalMain);
 
   document.addEventListener('keydown', event => {
-    modalCard.classList.remove('show-popup');
+    if (event.keyCode === 27) {
+      modalCard.classList.remove('show-popup');
+    }
   });
 
   buttonTrailer.addEventListener('click', () => {
@@ -98,7 +100,6 @@ export async function showPopUp(card) {
     // modal.classList.remove('modal')
     modalInfo.classList.add('hidden');
     modal.classList.add('overflow');
-
     video.src = `https://www.youtube.com/embed/${movieTrailer}`;
   });
 
