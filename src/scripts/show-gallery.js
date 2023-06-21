@@ -79,6 +79,7 @@ function showMovies(data) {
   addEventToCardLibrary(trackingID);
 }
 import { showPopUp } from './main-body';
+
 const API_KEY = `d793dd4ca6e7be6c8e5a071661ccb72e`;
 const API_URL = `https://api.themoviedb.org/3`;
 
