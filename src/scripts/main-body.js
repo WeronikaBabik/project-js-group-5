@@ -182,7 +182,6 @@ async function showResultsOnSearch(e) {
   e.preventDefault();
   const query = input.value;
   const data = await getBySearch(query, (page = 1));
-  console.log(data);
   if (data.results.length === 0) {
     showGallery();
     return Notiflix.Notify.failure('Oops, there is no movie with that name');

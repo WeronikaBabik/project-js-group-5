@@ -145,11 +145,7 @@ export function onCurrentPage(event) {
 
 function onPaginationBtn(currentPage) {
   mainGallery.innerHTML = '';
-  getTrending(currentPage)
-    .then(showGallery)
-    .catch(error => {
-      return Notiflix.Notify.failure('Oops, there is no movie with that name');
-    });
+  showGallery(currentPage);
 }
 
 function onPaginationBtnForInput(currentPage) {

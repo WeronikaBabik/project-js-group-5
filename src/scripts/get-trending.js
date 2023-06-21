@@ -5,8 +5,8 @@ import { addEventToCard } from './main-body';
 import noimage from '../images/header-main/noimage.jpg';
 
 showGallery();
-export async function showGallery() {
-  const data = await getTrending();
+export async function showGallery(page) {
+  const data = await getTrending(page);
   mainGallery.innerHTML = data.results
     .slice(0, 12)
     .map(e => {
